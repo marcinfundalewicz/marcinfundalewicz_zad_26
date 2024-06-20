@@ -46,11 +46,11 @@
     <p th:if="${match.winner == null}"
        th:text="|Rezultat meczu: Mecz się jeszcze nie odbył|"></p>
 
-    <div th:if="${match.betClosed == true and match.winner == bet.matchResult}" class="correct">
+    <div th:if="${match.betClosed == true and match.winner == bet.matchResult.name()}" class="correct">
         <p th:text="|Wygrana: ${#numbers.formatDecimal(bet.calculatePossibleWin(), 1, 'POINT', 2, 'POINT')} zł|"></p>
         <p>GRATULACJE!</p>
     </div>
-    <p th:if="${match.winner != bet.matchResult}" class="wrong">Wygrana: 0.00
+    <p th:if="${match.betClosed == true and match.winner != bet.matchResult.name()}" class="wrong">Wygrana: 0.00
         zł</p>
     </br>
     <a class="anchor" th:href="@{/}">Powrót do strony głównej</a>

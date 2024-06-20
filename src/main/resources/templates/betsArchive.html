@@ -26,9 +26,12 @@
         </thead>
         <tbody>
         <tr th:each="bet: ${bets}">
-            <th scope="row" th:text="${bet.id}"></th>
-            <td th:text="${bet.match.teamA}"></td>
-            <td th:text="${bet.match.teamB}"></td>
+            <th th:if="${bet.id != null}"
+                scope="row" th:text="${bet.id}"></th>
+            <td th:if="${bet.match.teamA != null}"
+                th:text="${bet.match.teamA}"></td>
+            <td th:if="${bet.match.teamB != null}"
+                th:text="${bet.match.teamB}"></td>
             <td th:if="${bet.match == T(pl.javastart.match.MatchResult).TEAM_A}"
                 th:text="${bet.match.teamA}"></td>
             <td th:if="${bet.match == T(pl.javastart.match.MatchResult).TEAM_B}"
