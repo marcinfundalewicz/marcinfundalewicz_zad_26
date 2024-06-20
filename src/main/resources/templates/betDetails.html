@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplikacja Bukmacherska</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+</head>
+<body>
+<header>
+    <div th:replace="fragments :: header"></div>
+</header>
+<div class="container">
+    </br>
+    <ul class="list-group list-group-horizontal-xl">
+        <li class="list-group-item" th:text="${bet.match.getTeamA()}"></li>
+        <li class="list-group-item">vs.</li>
+        <li class="list-group-item" th:text="${bet.match.getTeamB()}"></li>
+        <li class="list-group-item" th:text="${bet.match.getDate()}"></li>
+    </ul>
+    </br>
+    <h4>Szczegóły kuponu:</h4>
+
+
+    <p th:if="${bet.matchResult == T(pl.javastart.match.MatchResult).TEAM_A}"
+       th:text="|Typ: ${bet.matchResult}|"></p>
+    <p th:if="${bet.matchResult == T(pl.javastart.match.MatchResult).TEAM_B}"
+       th:text="|Typ: ${bet.matchResult}|"></p>
+    <p th:if="${bet.matchResult == T(pl.javastart.match.MatchResult).DRAW}">Typ: Remis</p>
+    <p th:if="${bet.matchResult == T(pl.javastart.match.MatchResult).TEAM_A}"
+       th:text="|Kurs: ${bet.match.matchDetails.oddTeamA}|">
+    <p th:if="${bet.matchResult == T(pl.javastart.match.MatchResult).TEAM_B}"
+       th:text="|Kurs: ${bet.match.matchDetails.oddTeamB}|">
+    <p th:if="${bet.matchResult == T(pl.javastart.match.MatchResult).DRAW}"
+       th:text="|Kurs: ${bet.match.matchDetails.oddDraw}|">
+    <p th:text="|Stawka: ${bet.stake} zł|"></p>
+    <p th:text="|Potencjalna wygrana: ${#numbers.formatDecimal(bet.calculatePossibleWin(), 1, 'POINT', 2, 'POINT')} zł|"></p>
+    </br>
+    <p th:if="${match.winner == 'TEAM_B'}"
+       th:text="|Rezultat meczu: ${match.teamB}|"></p>
+    <p th:if="${match.winner == 'TEAM_A'}"
+       th:text="|Rezultat meczu: ${match.teamA}|"></p>
+    <p th:if="${match.winner == 'DRAW'}"
+       th:text="|Rezultat meczu: REMIS|"></p>
+    <p th:if="${match.winner == null}"
+       th:text="|Rezultat meczu: Mecz się jeszcze nie odbył|"></p>
+
+    <div th:if="${match.betClosed == true and match.winner == bet.matchResult}" class="correct">
+        <p th:text="|Wygrana: ${#numbers.formatDecimal(bet.calculatePossibleWin(), 1, 'POINT', 2, 'POINT')} zł|"></p>
+        <p>GRATULACJE!</p>
+    </div>
+    <p th:if="${match.winner != bet.matchResult}" class="wrong">Wygrana: 0.00
+        zł</p>
+    </br>
+    <a class="anchor" th:href="@{/}">Powrót do strony głównej</a>
+</div>
+<footer>
+    <div th:replace="fragments :: footer"></div>
+</footer>
+</body>
+</html>

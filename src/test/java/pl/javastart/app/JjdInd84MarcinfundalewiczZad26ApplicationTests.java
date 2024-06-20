@@ -1,4 +1,4 @@
-package pl.javastart.jjdind84_marcinfundalewicz_zad_26;
+package pl.javastart.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

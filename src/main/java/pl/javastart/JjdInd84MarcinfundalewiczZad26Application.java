@@ -1,4 +1,4 @@
-package pl.javastart.jjdind84_marcinfundalewicz_zad_26;
+package pl.javastart;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

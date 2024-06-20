@@ -1,0 +1,30 @@
+insert into match_details (odd_teamA, odd_teamB, odd_draw) VALUES (2.20, 3.75, 3.4);
+insert into match_details (odd_teamA, odd_teamB, odd_draw) VALUES (2.96, 3.5, 3.8);
+insert into match_details (odd_teamA, odd_teamB, odd_draw) VALUES (2.05, 3.4, 3.1);
+insert into match_details (odd_teamA, odd_teamB, odd_draw) VALUES (2.11, 3.35, 2.92);
+insert into match_details (odd_teamA, odd_teamB, odd_draw) VALUES (2.24, 3.25, 3.12);
+insert into match_details (odd_teamA, odd_teamB, odd_draw) VALUES (2.33, 3.75, 3.32);
+insert into match_details (odd_teamA, odd_teamB, odd_draw) VALUES (2.45, 3.25, 3.52);
+insert into match_details (odd_teamA, odd_teamB, odd_draw) VALUES (2.51, 3.55, 4.2);
+insert into match_details (odd_teamA, odd_teamB, odd_draw) VALUES (2.8, 3.15, 4.32);
+insert into match_details (odd_teamA, odd_teamB, odd_draw) VALUES (2.7, 3.05, 2.2);
+
+insert into match (teamA, teamB, date, bet_closed, match_details_id, winner) VALUES ('FC Barcelona', 'Real Madryt', '2024-08-08', false, 1, null);
+insert into match (teamA, teamB, date, bet_closed, match_details_id, winner) VALUES ('Tottenham Spurs', 'Liverpool FC', '2024-08-26', false, 2, null);
+insert into match (teamA, teamB, date, bet_closed, match_details_id, winner) VALUES ('Manchester United', 'Manchester City', '2024-08-27', false, 3, null);
+insert into match (teamA, teamB, date, bet_closed, match_details_id, winner) VALUES ('Chelsea Londyn', 'Arsenal Londyn', '2024-08-15', false, 4, null);
+insert into match (teamA, teamB, date, bet_closed, match_details_id, winner) VALUES ('Bayern Monachium', 'Borussia Dortmund', '2024-08-16', false, 5, null);
+insert into match (teamA, teamB, date, bet_closed, match_details_id, winner) VALUES ('Paris Saint Germain', 'Olympique Lyon', '2024-08-17', false, 6, null);
+insert into match (teamA, teamB, date, bet_closed, match_details_id, winner) VALUES ('Ajax Amsterdam', 'PSV Eindhoven', '2024-08-15', false, 7, null);
+insert into match (teamA, teamB, date, bet_closed, match_details_id, winner) VALUES ('AS Roma', 'Juventus Turyn', '2024-08-11', false, 8, null);
+insert into match (teamA, teamB, date, bet_closed, match_details_id, winner) VALUES ('AC Milan', 'Inter Mediolan', '2024-08-13', false, 9, null);
+insert into match (teamA, teamB, date, bet_closed, match_details_id, winner) VALUES ('Atletico Madryt', 'Sevilla FC', '2024-08-10', false, 10, null);
+
+insert into bet (match_result, stake, possible_win, match_id) VALUES ('TEAM_A', 10, 1, 10);
+insert into bet (match_result, stake, possible_win, match_id) VALUES ('DRAW', 20, 1, 8);
+insert into bet (match_result, stake, possible_win, match_id) VALUES ('TEAM_B', 10, 1, 6);
+insert into bet (match_result, stake, possible_win, match_id) VALUES ('TEAM_A', 15, 1, 10);
+insert into bet (match_result, stake, possible_win, match_id) VALUES ('TEAM_B', 10, 1, 5);
+insert into bet (match_result, stake, possible_win, match_id) VALUES ('TEAM_A', 10, 1, 10);
+insert into bet (match_result, stake, possible_win, match_id) VALUES ('TEAM_B', 13, 1, 8);
+insert into bet (match_result, stake, possible_win, match_id) VALUES ('TEAM_A', 30, 1, 6);
