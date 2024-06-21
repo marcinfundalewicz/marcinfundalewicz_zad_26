@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplikacja Bukmacherska</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+</head>
+<body>
+<header>
+    <div th:replace="fragments :: header"></div>
+</header>
+<br>
+<div class="container">
+    <h4>TOP 3 najczęściej obstawianych meczów:</h4>
+    <div class="list-container">
+        <ul th:each="topMatch : ${topMatches}" class="list-group list-group-horizontal">
+            <li class="list-group-item number-width" th:text="${topMatch.getId()}"></li>
+            <li class="list-group-item name-width" th:text="${topMatch.getTeamA()}"></li>
+            <li class="list-group-item number-width" >vs.</li>
+            <li class="list-group-item name-width" th:text="${topMatch.getTeamB()}"></li>
+            <div class="buttons">
+                <a th:href="@{|/match/${topMatch.getId()}/bet|}" class="btn btn-secondary">Obstaw wynik</a>
+                <a th:href="@{|/match/${topMatch.getId()}/score|}" class="btn btn-secondary">Wprowadź wynik</a>
+                <a th:href="@{|/match/${topMatch.getId()}/delete|}" class="btn btn-secondary">Usuń mecz</a>
+            </div>
+        </ul>
+    </div>
+    </br>
+    <h4>Lista meczów dostępnych do obstawienia:</h4>
+    <div class="list-container">
+        <ul th:each="match : ${matches}" class="list-group list-group-horizontal">
+            <li class="list-group-item number-width" th:text="${match.getId()}"></li>
+            <li class="list-group-item name-width" th:text="${match.getTeamA()}"></li>
+            <li class="list-group-item number-width" >vs.</li>
+            <li class="list-group-item name-width" th:text="${match.getTeamB()}"></li>
+            <div class="buttons">
+                <a th:href="@{|/match/${match.getId()}/bet|}" class="btn btn-secondary">Obstaw wynik</a>
+                <a th:href="@{|/match/${match.getId()}/score|}" class="btn btn-secondary">Wprowadź wynik</a>
+                <a th:href="@{|/match/${match.getId()}/delete|}" class="btn btn-secondary">Usuń mecz</a>
+            </div>
+        </ul>
+    </div>
+    </br>
+    <a class="anchor" href="/match/add">Dodaj mecz do obstawienia</a></br>
+    <a class="anchor" href="/bet/archive">Historia obstawionych meczów</a></br>
+</div>
+
+<footer>
+    <div th:replace="fragments :: footer"></div>
+</footer>
+</body>
+</html>

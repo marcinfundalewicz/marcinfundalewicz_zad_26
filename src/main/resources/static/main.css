@@ -1,0 +1,109 @@
+.header {
+    background-color: deepskyblue;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+}
+.header a {
+    text-decoration: none;
+    color: black;
+}
+
+.header :hover {
+    color: white;
+}
+
+.footer {
+    background-color: deepskyblue;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    flex-shrink: 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.custom-form-control {
+    display: inline-block;
+    width: 200px;
+    margin-right: 5px;
+    vertical-align: top;
+}
+.custom-select-width {
+    width: 200px;
+}
+
+.correct {
+    color: #237921 !important;
+    font-weight: bold;
+}
+
+.wrong {
+    color: red !important;
+    font-weight: bold;
+}
+
+body {
+    background-color: lightblue;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1 0 auto;
+    color: black;
+}
+
+.name-width {
+    width: 250px;
+    box-sizing: border-box;
+}
+
+.number-width {
+    width: 50px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    padding: 5px;
+    gap: 10px;
+}
+.btn-secondary {
+    color: white;
+    background-color: blue;
+}
+.list-group-item {
+    color: white;
+    background-color: blue;
+}
+
+.anchor:hover{
+    color: white;
+}
+
+.anchor {
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.error {
+    text-align: center;
+}
+.error a {
+    text-decoration: none;
+    color: black;
+}
+
+.error a:hover {
+    color: white;
+}
